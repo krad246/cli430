@@ -74,7 +74,7 @@
 			__save_ctx
 
 	INTCB_(\inum):
-			_mov &irq_callbacks, r12
+			_mov #irq_callbacks, r12
 			_mov inttbloffs(r12), r13
 			_call r13
 
@@ -101,14 +101,14 @@
 
 
 		.altmacro		
-		.set i, 1
+		.set i, 0
 		.rept MSP430_MAX_INTVECS
 			__gen_body %i
 			.set i, i+1
 		.endr
 
 		.altmacro		
-		.set i, 1
+		.set i, 0
 		.rept MSP430_MAX_INTVECS
 			__gen_linkage %i
 			.set i, i+1

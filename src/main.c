@@ -22,10 +22,9 @@ int app_main(void *arg) {
 	}
 
 	printf("Hello, World!\n");
-	short *int0 = (short *) (0xFF80);
-	cb_t func = (cb_t) *int0;
-	func(0);
-
+	P5IE |= BIT6;
+	P5DIR &= ~BIT6;
+	
 	return 0;
 }
 

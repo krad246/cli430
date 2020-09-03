@@ -60,7 +60,7 @@ _call_main:
 		_call	#main
 
 _main_exit:
-		bis.w	#LPM3_bits,	sr
+		bis.w	#(LPM3_bits | GIE),	sr
 		nop
 
 		jmp		_main_exit
