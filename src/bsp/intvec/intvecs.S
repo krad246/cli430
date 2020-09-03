@@ -22,7 +22,7 @@
 
 		#define INTTBLOFFS_(inum) (_ptrsz * inum)
 
-		#define MSP430_MAX_INTVECS 54
+		#define MSP430_MAX_INTVECS 64
 
 .macro __save_ctx
 		#if defined(__MSP430_HAS_MSP430XV2_CPU__) || \
@@ -68,14 +68,14 @@
 	.weak INTPRE_(\inum)
 	.type INTPRE_(\inum), @function
 
-	.set inttbloffs_\inum, INTTBLOFFS_(\inum)
+	.set inttbloffs, INTTBLOFFS_(\inum)
 
 	INTPRE_(\inum):
 			__save_ctx
 
 	INTCB_(\inum):
 			_mov &irq_callbacks, r12
-			_mov inttbloffs_\inum(r12), r13
+			_mov inttbloffs(r12), r13
 			_call r13
 
 	INTPOST_(\inum):

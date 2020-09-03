@@ -40,7 +40,7 @@ ASM_EXTS		:= .S
 #-------------------------------------------------------------------------------
 # Cross compiler flags
 #-------------------------------------------------------------------------------
-OPT_FLAGS		= -O0 -g -g3 -gdwarf-4 -ggdb -gstrict-dwarf
+OPT_FLAGS		= -O0 -g -g3 -gdwarf-3 -ggdb -gstrict-dwarf
 WARN_FLAGS		= -Wall -Wunused -Werror -fverbose-asm
 ERRATA_FLAGS	= cpu4,cpu8,cpu11,cpu12,cpu13,cpu19
 SIZE_FLAGS		= -ffreestanding -nostartfiles -mtiny-printf
