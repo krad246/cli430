@@ -32,7 +32,7 @@ _start:
 		_mov	#__bsssize, r14
 
 	.ifdef __MSP430X_LARGE__
-		clr.w	R15									
+		clr.w	r15
 	.endif
 
 		_call	#memset							; zero-init .bss
@@ -40,7 +40,7 @@ _start:
 		;-------------------
 
 		_mov	#__datastart, r12
-		_mov	#__romdatastart, r14
+		_mov	#__romdatastart, r13
 
 		_cmp	r12, r13						; skip if no memory
 												; needs to be moved
@@ -48,7 +48,7 @@ _start:
 		_mov	#__romdatacopysize, r14
 	
 	.ifdef __MSP430X_LARGE__
-		clr.w	R15									
+		clr.w	r15
 	.endif
 
 		_call	#memmove						; copy rom to ram

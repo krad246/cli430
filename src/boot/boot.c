@@ -15,3 +15,6 @@ int main(void)
 }
 
 // bsp needs flexible RAW and scheduled interrupts setup
+// bsp
+// debug
+// port

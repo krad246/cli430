@@ -7,6 +7,11 @@ void UNHANDLED_TRAP(void *arg)
 	return;
 }
 
+// int write(int fd, const void *buf, size_t count)
+// {
+// 	return 1;
+// }
+
 typedef void (*cb_t)(void *);
 cb_t irq_callbacks[64];
 
