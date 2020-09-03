@@ -7,7 +7,7 @@
 
 ;-------------------------------------------------------------------------------
             
-		.text                           
+		.text
 		.global _start					
 		.global main
 
@@ -55,7 +55,7 @@ _start:
 
 		;-------------------
 
-_call_main:; Set argc == 0
+_call_main:
 		clr.w	R12									
 		_call	#main
 

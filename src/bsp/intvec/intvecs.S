@@ -22,7 +22,7 @@
 
 		#define INTTBLOFFS_(inum) (_ptrsz * inum)
 
-		#define MSP430_MAX_INTVECS 63
+		#define MSP430_MAX_INTVECS 54
 
 .macro __save_ctx
 		#if defined(__MSP430_HAS_MSP430XV2_CPU__) || \
@@ -94,8 +94,11 @@
 ;-------------------------------------------------------------------------------
 ; MSP430 interrupt table declaration
 ;-------------------------------------------------------------------------------
-		.sect "handlers", "ax", @progbits
+		.data
 		.global irq_callbacks
+		.sect .handlers, "a", @progbits
+		.type irq_callbacks, @object
+
 
 		.altmacro		
 		.set i, 1
